@@ -30,12 +30,13 @@
         {
             this.PreviosButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
-            this.NoDR = new System.Windows.Forms.CheckedListBox();
             this.Checker2Button = new System.Windows.Forms.Button();
             this.Checker1Button = new System.Windows.Forms.Button();
-            this.DecisionButtonNoDR = new System.Windows.Forms.RadioButton();
+            this.DecisionButtonNormalDR = new System.Windows.Forms.RadioButton();
             this.DecisionButtonMildNPDR = new System.Windows.Forms.RadioButton();
             this.DecisionButtonModNPDR = new System.Windows.Forms.RadioButton();
+            this.DecisionButtonPDR = new System.Windows.Forms.RadioButton();
+            this.DecisionButtonSevereNPDR = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // PreviosButton
@@ -56,21 +57,6 @@
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
             // 
-            // NoDR
-            // 
-            this.NoDR.FormattingEnabled = true;
-            this.NoDR.Items.AddRange(new object[] {
-            "No DR",
-            "Mild NPDR",
-            "Mod NPDR",
-            "Severe NPDR",
-            "PD",
-            "R"});
-            this.NoDR.Location = new System.Drawing.Point(805, 164);
-            this.NoDR.Name = "NoDR";
-            this.NoDR.Size = new System.Drawing.Size(270, 140);
-            this.NoDR.TabIndex = 3;
-            // 
             // Checker2Button
             // 
             this.Checker2Button.Location = new System.Drawing.Point(949, 53);
@@ -89,21 +75,21 @@
             this.Checker1Button.Text = "검사자1";
             this.Checker1Button.UseVisualStyleBackColor = true;
             // 
-            // DecisionButtonNoDR
+            // DecisionButtonNormalDR
             // 
-            this.DecisionButtonNoDR.AutoSize = true;
-            this.DecisionButtonNoDR.Location = new System.Drawing.Point(612, 172);
-            this.DecisionButtonNoDR.Name = "DecisionButtonNoDR";
-            this.DecisionButtonNoDR.Size = new System.Drawing.Size(68, 18);
-            this.DecisionButtonNoDR.TabIndex = 6;
-            this.DecisionButtonNoDR.TabStop = true;
-            this.DecisionButtonNoDR.Text = "No DR";
-            this.DecisionButtonNoDR.UseVisualStyleBackColor = true;
+            this.DecisionButtonNormalDR.AutoSize = true;
+            this.DecisionButtonNormalDR.Location = new System.Drawing.Point(873, 150);
+            this.DecisionButtonNormalDR.Name = "DecisionButtonNormalDR";
+            this.DecisionButtonNormalDR.Size = new System.Drawing.Size(94, 18);
+            this.DecisionButtonNormalDR.TabIndex = 6;
+            this.DecisionButtonNormalDR.TabStop = true;
+            this.DecisionButtonNormalDR.Text = "Normal DR";
+            this.DecisionButtonNormalDR.UseVisualStyleBackColor = true;
             // 
             // DecisionButtonMildNPDR
             // 
             this.DecisionButtonMildNPDR.AutoSize = true;
-            this.DecisionButtonMildNPDR.Location = new System.Drawing.Point(612, 203);
+            this.DecisionButtonMildNPDR.Location = new System.Drawing.Point(873, 178);
             this.DecisionButtonMildNPDR.Name = "DecisionButtonMildNPDR";
             this.DecisionButtonMildNPDR.Size = new System.Drawing.Size(95, 18);
             this.DecisionButtonMildNPDR.TabIndex = 7;
@@ -114,7 +100,7 @@
             // DecisionButtonModNPDR
             // 
             this.DecisionButtonModNPDR.AutoSize = true;
-            this.DecisionButtonModNPDR.Location = new System.Drawing.Point(612, 234);
+            this.DecisionButtonModNPDR.Location = new System.Drawing.Point(873, 205);
             this.DecisionButtonModNPDR.Name = "DecisionButtonModNPDR";
             this.DecisionButtonModNPDR.Size = new System.Drawing.Size(98, 18);
             this.DecisionButtonModNPDR.TabIndex = 8;
@@ -122,17 +108,40 @@
             this.DecisionButtonModNPDR.Text = "Mod NPDR";
             this.DecisionButtonModNPDR.UseVisualStyleBackColor = true;
             // 
+            // DecisionButtonPDR
+            // 
+            this.DecisionButtonPDR.AutoSize = true;
+            this.DecisionButtonPDR.Location = new System.Drawing.Point(873, 261);
+            this.DecisionButtonPDR.Name = "DecisionButtonPDR";
+            this.DecisionButtonPDR.Size = new System.Drawing.Size(55, 18);
+            this.DecisionButtonPDR.TabIndex = 10;
+            this.DecisionButtonPDR.TabStop = true;
+            this.DecisionButtonPDR.Text = "PDR";
+            this.DecisionButtonPDR.UseVisualStyleBackColor = true;
+            // 
+            // DecisionButtonSevereNPDR
+            // 
+            this.DecisionButtonSevereNPDR.AutoSize = true;
+            this.DecisionButtonSevereNPDR.Location = new System.Drawing.Point(873, 232);
+            this.DecisionButtonSevereNPDR.Name = "DecisionButtonSevereNPDR";
+            this.DecisionButtonSevereNPDR.Size = new System.Drawing.Size(115, 18);
+            this.DecisionButtonSevereNPDR.TabIndex = 9;
+            this.DecisionButtonSevereNPDR.TabStop = true;
+            this.DecisionButtonSevereNPDR.Text = "Severe NPDR";
+            this.DecisionButtonSevereNPDR.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 466);
+            this.Controls.Add(this.DecisionButtonPDR);
+            this.Controls.Add(this.DecisionButtonSevereNPDR);
             this.Controls.Add(this.DecisionButtonModNPDR);
             this.Controls.Add(this.DecisionButtonMildNPDR);
-            this.Controls.Add(this.DecisionButtonNoDR);
+            this.Controls.Add(this.DecisionButtonNormalDR);
             this.Controls.Add(this.Checker2Button);
             this.Controls.Add(this.Checker1Button);
-            this.Controls.Add(this.NoDR);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PreviosButton);
             this.Name = "Form1";
@@ -145,12 +154,13 @@
         #endregion
         private System.Windows.Forms.Button PreviosButton;
         private System.Windows.Forms.Button NextButton;
-        private System.Windows.Forms.CheckedListBox NoDR;
         private System.Windows.Forms.Button Checker2Button;
         private System.Windows.Forms.Button Checker1Button;
-        private System.Windows.Forms.RadioButton DecisionButtonNoDR;
+        private System.Windows.Forms.RadioButton DecisionButtonNormalDR;
         private System.Windows.Forms.RadioButton DecisionButtonMildNPDR;
         private System.Windows.Forms.RadioButton DecisionButtonModNPDR;
+        private System.Windows.Forms.RadioButton DecisionButtonPDR;
+        private System.Windows.Forms.RadioButton DecisionButtonSevereNPDR;
     }
 }
 
