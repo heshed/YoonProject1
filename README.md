@@ -36,6 +36,8 @@ YoonProject1
 ## 결과
 
 - 포맷은 csv, 입력 디렉토리에 저장
+- 한번 로딩에 하나의 csv 파일
+- csv 파일에 row 추가되는 방식
 - 흑백이미지와 컬러이미지의 파일명이 동일한데, 결과 파일명은 다
 - 프로토콜 예시
 
@@ -57,4 +59,5 @@ YoonProject1
 
 ## 예시 화면
 
+![images/YoonProject1-Sample.png]
 
