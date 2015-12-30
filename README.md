@@ -59,5 +59,5 @@ YoonProject1
 
 ## 예시 화면
 
-![images/YoonProject1-Sample.png]
+![YoonProject1-Sample.png](images/YoonProject1-Sample.png)
 
