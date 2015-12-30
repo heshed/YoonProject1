@@ -37,6 +37,8 @@
             this.DecisionButtonModNPDR = new System.Windows.Forms.RadioButton();
             this.DecisionButtonPDR = new System.Windows.Forms.RadioButton();
             this.DecisionButtonSevereNPDR = new System.Windows.Forms.RadioButton();
+            this.groupBoxDR = new System.Windows.Forms.GroupBox();
+            this.groupBoxDR.SuspendLayout();
             this.SuspendLayout();
             // 
             // PreviosButton
@@ -78,7 +80,7 @@
             // DecisionButtonNormalDR
             // 
             this.DecisionButtonNormalDR.AutoSize = true;
-            this.DecisionButtonNormalDR.Location = new System.Drawing.Point(873, 150);
+            this.DecisionButtonNormalDR.Location = new System.Drawing.Point(64, 15);
             this.DecisionButtonNormalDR.Name = "DecisionButtonNormalDR";
             this.DecisionButtonNormalDR.Size = new System.Drawing.Size(94, 18);
             this.DecisionButtonNormalDR.TabIndex = 6;
@@ -89,7 +91,7 @@
             // DecisionButtonMildNPDR
             // 
             this.DecisionButtonMildNPDR.AutoSize = true;
-            this.DecisionButtonMildNPDR.Location = new System.Drawing.Point(873, 178);
+            this.DecisionButtonMildNPDR.Location = new System.Drawing.Point(64, 43);
             this.DecisionButtonMildNPDR.Name = "DecisionButtonMildNPDR";
             this.DecisionButtonMildNPDR.Size = new System.Drawing.Size(95, 18);
             this.DecisionButtonMildNPDR.TabIndex = 7;
@@ -100,7 +102,7 @@
             // DecisionButtonModNPDR
             // 
             this.DecisionButtonModNPDR.AutoSize = true;
-            this.DecisionButtonModNPDR.Location = new System.Drawing.Point(873, 205);
+            this.DecisionButtonModNPDR.Location = new System.Drawing.Point(64, 70);
             this.DecisionButtonModNPDR.Name = "DecisionButtonModNPDR";
             this.DecisionButtonModNPDR.Size = new System.Drawing.Size(98, 18);
             this.DecisionButtonModNPDR.TabIndex = 8;
@@ -111,7 +113,7 @@
             // DecisionButtonPDR
             // 
             this.DecisionButtonPDR.AutoSize = true;
-            this.DecisionButtonPDR.Location = new System.Drawing.Point(873, 261);
+            this.DecisionButtonPDR.Location = new System.Drawing.Point(64, 126);
             this.DecisionButtonPDR.Name = "DecisionButtonPDR";
             this.DecisionButtonPDR.Size = new System.Drawing.Size(55, 18);
             this.DecisionButtonPDR.TabIndex = 10;
@@ -122,7 +124,7 @@
             // DecisionButtonSevereNPDR
             // 
             this.DecisionButtonSevereNPDR.AutoSize = true;
-            this.DecisionButtonSevereNPDR.Location = new System.Drawing.Point(873, 232);
+            this.DecisionButtonSevereNPDR.Location = new System.Drawing.Point(64, 97);
             this.DecisionButtonSevereNPDR.Name = "DecisionButtonSevereNPDR";
             this.DecisionButtonSevereNPDR.Size = new System.Drawing.Size(115, 18);
             this.DecisionButtonSevereNPDR.TabIndex = 9;
@@ -130,24 +132,35 @@
             this.DecisionButtonSevereNPDR.Text = "Severe NPDR";
             this.DecisionButtonSevereNPDR.UseVisualStyleBackColor = true;
             // 
+            // groupBoxDR
+            // 
+            this.groupBoxDR.Controls.Add(this.DecisionButtonPDR);
+            this.groupBoxDR.Controls.Add(this.DecisionButtonSevereNPDR);
+            this.groupBoxDR.Controls.Add(this.DecisionButtonModNPDR);
+            this.groupBoxDR.Controls.Add(this.DecisionButtonMildNPDR);
+            this.groupBoxDR.Controls.Add(this.DecisionButtonNormalDR);
+            this.groupBoxDR.Location = new System.Drawing.Point(809, 129);
+            this.groupBoxDR.Name = "groupBoxDR";
+            this.groupBoxDR.Size = new System.Drawing.Size(265, 182);
+            this.groupBoxDR.TabIndex = 11;
+            this.groupBoxDR.TabStop = false;
+            this.groupBoxDR.Text = "Select";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 466);
-            this.Controls.Add(this.DecisionButtonPDR);
-            this.Controls.Add(this.DecisionButtonSevereNPDR);
-            this.Controls.Add(this.DecisionButtonModNPDR);
-            this.Controls.Add(this.DecisionButtonMildNPDR);
-            this.Controls.Add(this.DecisionButtonNormalDR);
+            this.Controls.Add(this.groupBoxDR);
             this.Controls.Add(this.Checker2Button);
             this.Controls.Add(this.Checker1Button);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PreviosButton);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBoxDR.ResumeLayout(false);
+            this.groupBoxDR.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -161,6 +174,7 @@
         private System.Windows.Forms.RadioButton DecisionButtonModNPDR;
         private System.Windows.Forms.RadioButton DecisionButtonPDR;
         private System.Windows.Forms.RadioButton DecisionButtonSevereNPDR;
+        private System.Windows.Forms.GroupBox groupBoxDR;
     }
 }
 
