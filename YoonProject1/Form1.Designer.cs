@@ -38,7 +38,11 @@
             this.DecisionButtonPDR = new System.Windows.Forms.RadioButton();
             this.DecisionButtonSevereNPDR = new System.Windows.Forms.RadioButton();
             this.groupBoxDR = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxDR.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PreviosButton
@@ -47,7 +51,7 @@
             this.PreviosButton.Name = "PreviosButton";
             this.PreviosButton.Size = new System.Drawing.Size(126, 55);
             this.PreviosButton.TabIndex = 1;
-            this.PreviosButton.Text = "Previos";
+            this.PreviosButton.Text = "&Previos";
             this.PreviosButton.UseVisualStyleBackColor = true;
             // 
             // NextButton
@@ -56,7 +60,7 @@
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(126, 55);
             this.NextButton.TabIndex = 2;
-            this.NextButton.Text = "Next";
+            this.NextButton.Text = "&Next";
             this.NextButton.UseVisualStyleBackColor = true;
             // 
             // Checker2Button
@@ -65,7 +69,7 @@
             this.Checker2Button.Name = "Checker2Button";
             this.Checker2Button.Size = new System.Drawing.Size(126, 55);
             this.Checker2Button.TabIndex = 5;
-            this.Checker2Button.Text = "검사자2";
+            this.Checker2Button.Text = "검사자2(&b)";
             this.Checker2Button.UseVisualStyleBackColor = true;
             // 
             // Checker1Button
@@ -74,7 +78,7 @@
             this.Checker1Button.Name = "Checker1Button";
             this.Checker1Button.Size = new System.Drawing.Size(126, 55);
             this.Checker1Button.TabIndex = 4;
-            this.Checker1Button.Text = "검사자1";
+            this.Checker1Button.Text = "검사자1(&a)";
             this.Checker1Button.UseVisualStyleBackColor = true;
             // 
             // DecisionButtonNormalDR
@@ -82,10 +86,10 @@
             this.DecisionButtonNormalDR.AutoSize = true;
             this.DecisionButtonNormalDR.Location = new System.Drawing.Point(64, 15);
             this.DecisionButtonNormalDR.Name = "DecisionButtonNormalDR";
-            this.DecisionButtonNormalDR.Size = new System.Drawing.Size(94, 18);
+            this.DecisionButtonNormalDR.Size = new System.Drawing.Size(112, 18);
             this.DecisionButtonNormalDR.TabIndex = 6;
             this.DecisionButtonNormalDR.TabStop = true;
-            this.DecisionButtonNormalDR.Text = "Normal DR";
+            this.DecisionButtonNormalDR.Text = "&1. Normal DR";
             this.DecisionButtonNormalDR.UseVisualStyleBackColor = true;
             // 
             // DecisionButtonMildNPDR
@@ -93,10 +97,10 @@
             this.DecisionButtonMildNPDR.AutoSize = true;
             this.DecisionButtonMildNPDR.Location = new System.Drawing.Point(64, 43);
             this.DecisionButtonMildNPDR.Name = "DecisionButtonMildNPDR";
-            this.DecisionButtonMildNPDR.Size = new System.Drawing.Size(95, 18);
+            this.DecisionButtonMildNPDR.Size = new System.Drawing.Size(113, 18);
             this.DecisionButtonMildNPDR.TabIndex = 7;
             this.DecisionButtonMildNPDR.TabStop = true;
-            this.DecisionButtonMildNPDR.Text = "Mild NPDR";
+            this.DecisionButtonMildNPDR.Text = "&2. Mild NPDR";
             this.DecisionButtonMildNPDR.UseVisualStyleBackColor = true;
             // 
             // DecisionButtonModNPDR
@@ -104,10 +108,10 @@
             this.DecisionButtonModNPDR.AutoSize = true;
             this.DecisionButtonModNPDR.Location = new System.Drawing.Point(64, 70);
             this.DecisionButtonModNPDR.Name = "DecisionButtonModNPDR";
-            this.DecisionButtonModNPDR.Size = new System.Drawing.Size(98, 18);
+            this.DecisionButtonModNPDR.Size = new System.Drawing.Size(116, 18);
             this.DecisionButtonModNPDR.TabIndex = 8;
             this.DecisionButtonModNPDR.TabStop = true;
-            this.DecisionButtonModNPDR.Text = "Mod NPDR";
+            this.DecisionButtonModNPDR.Text = "&3. Mod NPDR";
             this.DecisionButtonModNPDR.UseVisualStyleBackColor = true;
             // 
             // DecisionButtonPDR
@@ -115,10 +119,10 @@
             this.DecisionButtonPDR.AutoSize = true;
             this.DecisionButtonPDR.Location = new System.Drawing.Point(64, 126);
             this.DecisionButtonPDR.Name = "DecisionButtonPDR";
-            this.DecisionButtonPDR.Size = new System.Drawing.Size(55, 18);
+            this.DecisionButtonPDR.Size = new System.Drawing.Size(73, 18);
             this.DecisionButtonPDR.TabIndex = 10;
             this.DecisionButtonPDR.TabStop = true;
-            this.DecisionButtonPDR.Text = "PDR";
+            this.DecisionButtonPDR.Text = "&5. PDR";
             this.DecisionButtonPDR.UseVisualStyleBackColor = true;
             // 
             // DecisionButtonSevereNPDR
@@ -126,10 +130,10 @@
             this.DecisionButtonSevereNPDR.AutoSize = true;
             this.DecisionButtonSevereNPDR.Location = new System.Drawing.Point(64, 97);
             this.DecisionButtonSevereNPDR.Name = "DecisionButtonSevereNPDR";
-            this.DecisionButtonSevereNPDR.Size = new System.Drawing.Size(115, 18);
+            this.DecisionButtonSevereNPDR.Size = new System.Drawing.Size(133, 18);
             this.DecisionButtonSevereNPDR.TabIndex = 9;
             this.DecisionButtonSevereNPDR.TabStop = true;
-            this.DecisionButtonSevereNPDR.Text = "Severe NPDR";
+            this.DecisionButtonSevereNPDR.Text = "&4. Severe NPDR";
             this.DecisionButtonSevereNPDR.UseVisualStyleBackColor = true;
             // 
             // groupBoxDR
@@ -146,6 +150,36 @@
             this.groupBoxDR.TabStop = false;
             this.groupBoxDR.Text = "Select";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1095, 27);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openDirectoryToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.ShortcutKeyDisplayString = "";
+            this.fileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(41, 23);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // openDirectoryToolStripMenuItem
+            // 
+            this.openDirectoryToolStripMenuItem.Name = "openDirectoryToolStripMenuItem";
+            this.openDirectoryToolStripMenuItem.ShortcutKeyDisplayString = "";
+            this.openDirectoryToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openDirectoryToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+            this.openDirectoryToolStripMenuItem.Text = "Open Directory";
+            this.openDirectoryToolStripMenuItem.Click += new System.EventHandler(this.openDirectoryToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
@@ -156,11 +190,16 @@
             this.Controls.Add(this.Checker1Button);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PreviosButton);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBoxDR.ResumeLayout(false);
             this.groupBoxDR.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,6 +214,9 @@
         private System.Windows.Forms.RadioButton DecisionButtonPDR;
         private System.Windows.Forms.RadioButton DecisionButtonSevereNPDR;
         private System.Windows.Forms.GroupBox groupBoxDR;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openDirectoryToolStripMenuItem;
     }
 }
 
