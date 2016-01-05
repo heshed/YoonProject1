@@ -1,6 +1,6 @@
 ﻿namespace YoonProject1
 {
-    partial class Form1
+    partial class PDRForm
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -38,16 +38,20 @@
             this.DecisionButtonPDR = new System.Windows.Forms.RadioButton();
             this.DecisionButtonSevereNPDR = new System.Windows.Forms.RadioButton();
             this.groupBoxDR = new System.Windows.Forms.GroupBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectedDirectory = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.imageListView = new System.Windows.Forms.ListView();
             this.groupBoxDR.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // PreviosButton
             // 
-            this.PreviosButton.Location = new System.Drawing.Point(805, 387);
+            this.PreviosButton.Location = new System.Drawing.Point(733, 349);
             this.PreviosButton.Name = "PreviosButton";
             this.PreviosButton.Size = new System.Drawing.Size(126, 55);
             this.PreviosButton.TabIndex = 1;
@@ -56,7 +60,7 @@
             // 
             // NextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(949, 387);
+            this.NextButton.Location = new System.Drawing.Point(877, 349);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(126, 55);
             this.NextButton.TabIndex = 2;
@@ -65,7 +69,7 @@
             // 
             // Checker2Button
             // 
-            this.Checker2Button.Location = new System.Drawing.Point(949, 53);
+            this.Checker2Button.Location = new System.Drawing.Point(877, 53);
             this.Checker2Button.Name = "Checker2Button";
             this.Checker2Button.Size = new System.Drawing.Size(126, 55);
             this.Checker2Button.TabIndex = 5;
@@ -74,7 +78,7 @@
             // 
             // Checker1Button
             // 
-            this.Checker1Button.Location = new System.Drawing.Point(805, 53);
+            this.Checker1Button.Location = new System.Drawing.Point(733, 53);
             this.Checker1Button.Name = "Checker1Button";
             this.Checker1Button.Size = new System.Drawing.Size(126, 55);
             this.Checker1Button.TabIndex = 4;
@@ -143,23 +147,23 @@
             this.groupBoxDR.Controls.Add(this.DecisionButtonModNPDR);
             this.groupBoxDR.Controls.Add(this.DecisionButtonMildNPDR);
             this.groupBoxDR.Controls.Add(this.DecisionButtonNormalDR);
-            this.groupBoxDR.Location = new System.Drawing.Point(809, 129);
+            this.groupBoxDR.Location = new System.Drawing.Point(737, 129);
             this.groupBoxDR.Name = "groupBoxDR";
             this.groupBoxDR.Size = new System.Drawing.Size(265, 182);
             this.groupBoxDR.TabIndex = 11;
             this.groupBoxDR.TabStop = false;
             this.groupBoxDR.Text = "Select";
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(18, 18);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1095, 27);
-            this.menuStrip1.TabIndex = 12;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(1024, 27);
+            this.menuStrip.TabIndex = 12;
+            this.menuStrip.Text = "menuStrip";
             // 
             // fileToolStripMenuItem
             // 
@@ -180,24 +184,52 @@
             this.openDirectoryToolStripMenuItem.Text = "Open Directory";
             this.openDirectoryToolStripMenuItem.Click += new System.EventHandler(this.openDirectoryToolStripMenuItem_Click);
             // 
-            // Form1
+            // selectedDirectory
+            // 
+            this.selectedDirectory.AutoSize = true;
+            this.selectedDirectory.Location = new System.Drawing.Point(599, 27);
+            this.selectedDirectory.Name = "selectedDirectory";
+            this.selectedDirectory.Size = new System.Drawing.Size(0, 14);
+            this.selectedDirectory.TabIndex = 14;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(0, 53);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(596, 703);
+            this.pictureBox.TabIndex = 15;
+            this.pictureBox.TabStop = false;
+            // 
+            // imageListView
+            // 
+            this.imageListView.Location = new System.Drawing.Point(602, 107);
+            this.imageListView.Name = "imageListView";
+            this.imageListView.Size = new System.Drawing.Size(125, 297);
+            this.imageListView.TabIndex = 13;
+            this.imageListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // PDRForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 466);
+            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.selectedDirectory);
+            this.Controls.Add(this.imageListView);
             this.Controls.Add(this.groupBoxDR);
             this.Controls.Add(this.Checker2Button);
             this.Controls.Add(this.Checker1Button);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.PreviosButton);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
+            this.Name = "PDRForm";
+            this.Text = "PDR Decision";
             this.groupBoxDR.ResumeLayout(false);
             this.groupBoxDR.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,9 +246,12 @@
         private System.Windows.Forms.RadioButton DecisionButtonPDR;
         private System.Windows.Forms.RadioButton DecisionButtonSevereNPDR;
         private System.Windows.Forms.GroupBox groupBoxDR;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openDirectoryToolStripMenuItem;
+        private System.Windows.Forms.Label selectedDirectory;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.ListView imageListView;
     }
 }
 
