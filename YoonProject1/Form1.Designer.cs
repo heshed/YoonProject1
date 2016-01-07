@@ -41,7 +41,7 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectedDirectory = new System.Windows.Forms.Label();
+            this.ConsoleLabel = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.imageListView = new System.Windows.Forms.ListView();
             this.groupBoxDR.SuspendLayout();
@@ -57,6 +57,7 @@
             this.PreviosButton.TabIndex = 1;
             this.PreviosButton.Text = "&Previos";
             this.PreviosButton.UseVisualStyleBackColor = true;
+            this.PreviosButton.Click += new System.EventHandler(this.PreviosButton_Click);
             // 
             // NextButton
             // 
@@ -66,6 +67,7 @@
             this.NextButton.TabIndex = 2;
             this.NextButton.Text = "&Next";
             this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // Checker2Button
             // 
@@ -75,6 +77,7 @@
             this.Checker2Button.TabIndex = 5;
             this.Checker2Button.Text = "검사자2(&b)";
             this.Checker2Button.UseVisualStyleBackColor = true;
+            this.Checker2Button.Click += new System.EventHandler(this.Checker2Button_Click);
             // 
             // Checker1Button
             // 
@@ -84,6 +87,7 @@
             this.Checker1Button.TabIndex = 4;
             this.Checker1Button.Text = "검사자1(&a)";
             this.Checker1Button.UseVisualStyleBackColor = true;
+            this.Checker1Button.Click += new System.EventHandler(this.Checker1Button_Click);
             // 
             // DecisionButtonNormalDR
             // 
@@ -152,7 +156,6 @@
             this.groupBoxDR.Size = new System.Drawing.Size(265, 182);
             this.groupBoxDR.TabIndex = 11;
             this.groupBoxDR.TabStop = false;
-            this.groupBoxDR.Text = "Select";
             // 
             // menuStrip
             // 
@@ -184,19 +187,19 @@
             this.openDirectoryToolStripMenuItem.Text = "Open Directory";
             this.openDirectoryToolStripMenuItem.Click += new System.EventHandler(this.openDirectoryToolStripMenuItem_Click);
             // 
-            // selectedDirectory
+            // ConsoleLabel
             // 
-            this.selectedDirectory.AutoSize = true;
-            this.selectedDirectory.Location = new System.Drawing.Point(599, 27);
-            this.selectedDirectory.Name = "selectedDirectory";
-            this.selectedDirectory.Size = new System.Drawing.Size(0, 14);
-            this.selectedDirectory.TabIndex = 14;
+            this.ConsoleLabel.AutoSize = true;
+            this.ConsoleLabel.Location = new System.Drawing.Point(12, 27);
+            this.ConsoleLabel.Name = "ConsoleLabel";
+            this.ConsoleLabel.Size = new System.Drawing.Size(0, 14);
+            this.ConsoleLabel.TabIndex = 14;
             // 
             // pictureBox
             // 
             this.pictureBox.Location = new System.Drawing.Point(0, 53);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(596, 703);
+            this.pictureBox.Size = new System.Drawing.Size(600, 700);
             this.pictureBox.TabIndex = 15;
             this.pictureBox.TabStop = false;
             // 
@@ -214,7 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.selectedDirectory);
+            this.Controls.Add(this.ConsoleLabel);
             this.Controls.Add(this.imageListView);
             this.Controls.Add(this.groupBoxDR);
             this.Controls.Add(this.Checker2Button);
@@ -249,7 +252,7 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openDirectoryToolStripMenuItem;
-        private System.Windows.Forms.Label selectedDirectory;
+        private System.Windows.Forms.Label ConsoleLabel;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.ListView imageListView;
     }

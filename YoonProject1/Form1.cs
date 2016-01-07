@@ -36,16 +36,43 @@ namespace YoonProject1
             DialogResult result = _folderBrowserDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                selectedDirectory.Text = _folderBrowserDialog.SelectedPath;
+                ConsoleLabel.Text = _folderBrowserDialog.SelectedPath;
                 updateImageFileDataTable(_imageFileDataTable, _folderBrowserDialog.SelectedPath);
                 updateImageItemToListView(_imageFileDataTable, imageListView);
+                setFirstItemToCurrent();
             }
         }
 
+        private void setConsoleLabel(string text, System.Drawing.Color color)
+        {
+            ConsoleLabel.ForeColor = color;
+            ConsoleLabel.Text = text;
+        }
+
+        private void setFirstItemToCurrent()
+        {
+            if (_imageFileDataTable.isEmpty())
+            {
+                setConsoleLabel("불러온 이미지가 없습니다.", Color.Red);
+                return;
+            }
+
+            renderCurrentImageToPictureBox();
+        }
+
+        private void renderCurrentImageToPictureBox()
+        {
+            FileInfo info = _imageFileDataTable.getCurrentFileInfo();
+            string suffix1 = _imageFileDataTable.getCurrentSuffix1();
+            string suffix2 = _imageFileDataTable.getCurrentSuffix2();
+            renderImageFileToPictureBox(pictureBox, info.FullName);
+        }
 
         private void renderImageFileToPictureBox(PictureBox pictureBox, string imageFilePath)
         {
             Image image = Image.FromFile(imageFilePath);
+            pictureBox.Image = image;
+            pictureBox.AutoSize = true;
         }
 
         private void updateImageFileDataTable(ImageFileDataTable imageFileDataTable, string selectedPath)
@@ -95,6 +122,66 @@ namespace YoonProject1
             suffix1 = splitedFileName[2].Substring(lastSplitedStringLength - 1);
             suffix2 = splitedFileName[2].Substring(lastSplitedStringLength - 1, 1);
             return true;
+        }
+
+        private bool displayAndCheckImageLoadingState()
+        {
+            if (_imageFileDataTable.isEmpty())
+            {
+                setConsoleLabel("불러온 이미지가 없습니다.", Color.Red);
+                return false;
+            }
+
+            if (_imageFileDataTable.isFirstItem())
+            {
+                setConsoleLabel(_imageFileDataTable.getCurrentFileInfo().FullName + " 첫번째 이미지입니다.", Color.Blue);
+                return false;
+            }
+            if (_imageFileDataTable.isLastItem())
+            {
+                setConsoleLabel(_imageFileDataTable.getCurrentFileInfo().FullName + " 마지막 이미지입니다.", Color.Blue);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void PreviosButton_Click(object sender, EventArgs e)
+        {
+            _imageFileDataTable.setPrevious();
+            if (!displayAndCheckImageLoadingState())
+            {
+                return;
+            }
+            renderCurrentImageToPictureBox();
+            setConsoleLabel(_imageFileDataTable.getCurrentFileInfo().FullName, Color.Green);
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            _imageFileDataTable.setNext();
+            if (!displayAndCheckImageLoadingState())
+            {
+                return;
+            }
+            renderCurrentImageToPictureBox();
+            setConsoleLabel(_imageFileDataTable.getCurrentFileInfo().FullName, Color.Green);
+        }
+
+        private void Checker1Button_Click(object sender, EventArgs e)
+        {
+            setConsoleLabel("검사자1 변경 !", Color.Coral);
+            _imageFileDataTable.setInspectorId(ImageFileDataTable.Inspector1);
+            Checker1Button.BackColor = Color.Coral;
+            Checker2Button.BackColor = DefaultBackColor;
+        }
+
+        private void Checker2Button_Click(object sender, EventArgs e)
+        {
+            setConsoleLabel("검사자2 변경 !", Color.Coral);
+            _imageFileDataTable.setInspectorId(ImageFileDataTable.Inspector2);
+            Checker2Button.BackColor = Color.Coral;
+            Checker1Button.BackColor = DefaultBackColor;
         }
     }
 }
