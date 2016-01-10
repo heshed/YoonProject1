@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace YoonProject1
             this._folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer;
 
             this._imageFileDataTable = new ImageFileDataTable();
-           
+
         }
 
         private void openDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,7 +39,6 @@ namespace YoonProject1
             {
                 ConsoleLabel.Text = _folderBrowserDialog.SelectedPath;
                 updateImageFileDataTable(_imageFileDataTable, _folderBrowserDialog.SelectedPath);
-                updateImageItemToListView(_imageFileDataTable, imageListView);
                 setFirstItemToCurrent();
             }
         }
@@ -46,7 +46,9 @@ namespace YoonProject1
         private void setConsoleLabel(string text, System.Drawing.Color color)
         {
             ConsoleLabel.ForeColor = color;
-            ConsoleLabel.Text = text;
+            string prefixMessage = $"{_imageFileDataTable.getCurrentIndex()+1}/{_imageFileDataTable.getTotalSize()} ";
+            ConsoleLabel.Text = prefixMessage + text;
+            Debug.WriteLine(prefixMessage + text);
         }
 
         private void setFirstItemToCurrent()
@@ -86,20 +88,6 @@ namespace YoonProject1
                     imageFileDataTable.addFileInfo(info, suffix1, suffix2);
                 }
             }
-        }
-
-        private void updateImageItemToListView(ImageFileDataTable imageFileDataTable, ListView listView)
-        {
-            listView.View = View.List;
-            listView.Clear();
-            listView.BeginUpdate();
-            foreach (DataRow row in _imageFileDataTable.rows())
-            {
-                FileInfo info = row.Field<FileInfo>(1);
-                ListViewItem item = new ListViewItem(info.Name);
-                listView.Items.Add(item);
-            }
-            listView.EndUpdate();
         }
 
         private bool isImageFile(FileInfo info)

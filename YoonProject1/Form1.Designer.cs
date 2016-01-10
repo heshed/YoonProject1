@@ -43,7 +43,6 @@
             this.openDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsoleLabel = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.imageListView = new System.Windows.Forms.ListView();
             this.groupBoxDR.SuspendLayout();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -199,17 +198,9 @@
             // 
             this.pictureBox.Location = new System.Drawing.Point(0, 53);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(600, 700);
+            this.pictureBox.Size = new System.Drawing.Size(730, 700);
             this.pictureBox.TabIndex = 15;
             this.pictureBox.TabStop = false;
-            // 
-            // imageListView
-            // 
-            this.imageListView.Location = new System.Drawing.Point(602, 107);
-            this.imageListView.Name = "imageListView";
-            this.imageListView.Size = new System.Drawing.Size(125, 297);
-            this.imageListView.TabIndex = 13;
-            this.imageListView.UseCompatibleStateImageBehavior = false;
             // 
             // PDRForm
             // 
@@ -218,7 +209,6 @@
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.ConsoleLabel);
-            this.Controls.Add(this.imageListView);
             this.Controls.Add(this.groupBoxDR);
             this.Controls.Add(this.Checker2Button);
             this.Controls.Add(this.Checker1Button);
@@ -254,7 +244,6 @@
         private System.Windows.Forms.ToolStripMenuItem openDirectoryToolStripMenuItem;
         private System.Windows.Forms.Label ConsoleLabel;
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.ListView imageListView;
     }
 }
 
