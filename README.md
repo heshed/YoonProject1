@@ -2,6 +2,11 @@
 YoonProject1
 ====
 
+# 릴리즈
+
+- 2016-01-19 테스트버전 
+ - [YoonProject1-2016-01-19.zip](releaseWithDate/YoonProject1-2016-01-19.zip)
+
 # 요구사항
 
 ## 검사자
