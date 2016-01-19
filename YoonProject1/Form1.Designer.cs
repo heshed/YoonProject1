@@ -91,11 +91,13 @@
             // DecisionButtonNormalDR
             // 
             this.DecisionButtonNormalDR.AutoSize = true;
+            this.DecisionButtonNormalDR.Checked = true;
             this.DecisionButtonNormalDR.Location = new System.Drawing.Point(64, 15);
             this.DecisionButtonNormalDR.Name = "DecisionButtonNormalDR";
             this.DecisionButtonNormalDR.Size = new System.Drawing.Size(112, 18);
             this.DecisionButtonNormalDR.TabIndex = 6;
             this.DecisionButtonNormalDR.TabStop = true;
+            this.DecisionButtonNormalDR.Tag = "1";
             this.DecisionButtonNormalDR.Text = "&1. Normal DR";
             this.DecisionButtonNormalDR.UseVisualStyleBackColor = true;
             // 
@@ -107,6 +109,7 @@
             this.DecisionButtonMildNPDR.Size = new System.Drawing.Size(113, 18);
             this.DecisionButtonMildNPDR.TabIndex = 7;
             this.DecisionButtonMildNPDR.TabStop = true;
+            this.DecisionButtonMildNPDR.Tag = "2";
             this.DecisionButtonMildNPDR.Text = "&2. Mild NPDR";
             this.DecisionButtonMildNPDR.UseVisualStyleBackColor = true;
             // 
@@ -118,6 +121,7 @@
             this.DecisionButtonModNPDR.Size = new System.Drawing.Size(116, 18);
             this.DecisionButtonModNPDR.TabIndex = 8;
             this.DecisionButtonModNPDR.TabStop = true;
+            this.DecisionButtonModNPDR.Tag = "3";
             this.DecisionButtonModNPDR.Text = "&3. Mod NPDR";
             this.DecisionButtonModNPDR.UseVisualStyleBackColor = true;
             // 
@@ -129,6 +133,7 @@
             this.DecisionButtonPDR.Size = new System.Drawing.Size(73, 18);
             this.DecisionButtonPDR.TabIndex = 10;
             this.DecisionButtonPDR.TabStop = true;
+            this.DecisionButtonPDR.Tag = "5";
             this.DecisionButtonPDR.Text = "&5. PDR";
             this.DecisionButtonPDR.UseVisualStyleBackColor = true;
             // 
@@ -140,6 +145,7 @@
             this.DecisionButtonSevereNPDR.Size = new System.Drawing.Size(133, 18);
             this.DecisionButtonSevereNPDR.TabIndex = 9;
             this.DecisionButtonSevereNPDR.TabStop = true;
+            this.DecisionButtonSevereNPDR.Tag = "4";
             this.DecisionButtonSevereNPDR.Text = "&4. Severe NPDR";
             this.DecisionButtonSevereNPDR.UseVisualStyleBackColor = true;
             // 

@@ -17,18 +17,23 @@ namespace YoonProject1
     {
         private FolderBrowserDialog _folderBrowserDialog;
         private ImageFileDataTable _imageFileDataTable = null;
+        private InspectorsChoice _inspectorsChoice;
 
         public PDRForm()
         {
             InitializeComponent();
 
-            this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this._folderBrowserDialog.ShowNewFolderButton = false;
+            _folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            _folderBrowserDialog.ShowNewFolderButton = false;
 
-            this._folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer;
+            _folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer;
 
-            this._imageFileDataTable = new ImageFileDataTable();
+            _inspectorsChoice = new InspectorsChoice();
 
+            _imageFileDataTable = new ImageFileDataTable();
+            _imageFileDataTable.setInspectorId(ImageFileDataTable.Inspector1);
+            Checker1Button.BackColor = Color.Coral;
+            Checker2Button.BackColor = DefaultBackColor;
         }
 
         private void openDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,6 +44,7 @@ namespace YoonProject1
             {
                 ConsoleLabel.Text = _folderBrowserDialog.SelectedPath;
                 updateImageFileDataTable(_imageFileDataTable, _folderBrowserDialog.SelectedPath);
+                _inspectorsChoice.setSavePath(_folderBrowserDialog.SelectedPath);
                 setFirstItemToCurrent();
             }
         }
@@ -99,7 +105,8 @@ namespace YoonProject1
         private bool getSuffixesFromFileName(FileInfo info, out string suffix1, out string suffix2)
         {            
             // 파일 포맷은 001_151126_101489851.png 
-            string[] splitedFileName = info.Name.Split('_');
+            string nameWithoutExtension = Path.GetFileNameWithoutExtension(info.FullName);
+            string[] splitedFileName = nameWithoutExtension.Split('_');
             if (splitedFileName.Length < 3)
             {
                 suffix1 = "";
@@ -107,7 +114,7 @@ namespace YoonProject1
                 return false;
             }
             var lastSplitedStringLength = splitedFileName[2].Length;
-            suffix1 = splitedFileName[2].Substring(lastSplitedStringLength - 1);
+            suffix1 = splitedFileName[2].Substring(0, lastSplitedStringLength - 1);
             suffix2 = splitedFileName[2].Substring(lastSplitedStringLength - 1, 1);
             return true;
         }
@@ -134,8 +141,58 @@ namespace YoonProject1
             return true;
         }
 
+
+        /// <summary>
+        /// 선택한 라디오그룹의 Tag 값을 취한다. 
+        /// </summary>
+        /// <returns></returns> 선택한 값이 없을 경우 -1
+        private int getSelectedPDRValue()
+        {
+            int selectedValue = -1;
+            RadioButton selectedButton;
+            List<RadioButton> radioButtons = groupBoxDR.Controls.OfType<RadioButton>().ToList();
+            foreach (RadioButton rb in radioButtons)
+            {
+                if (rb.Checked)
+                {
+                    selectedValue = int.Parse(rb.Tag.ToString());
+                    return selectedValue;
+                }
+            }
+            return selectedValue;
+        }
+
+        private void saveCurrentChoiceToFile()
+        {
+            if (_imageFileDataTable.isEmpty())
+            {
+                setConsoleLabel("선택한 이미지가 없습니다!", Color.Red);
+                return;
+            }
+
+            string suffix1 = _imageFileDataTable.getCurrentSuffix1();
+            string suffix2 = _imageFileDataTable.getCurrentSuffix2();
+            int inspectorID = _imageFileDataTable.getInspectorId();
+            int selectedPDR = getSelectedPDRValue();
+
+            if (selectedPDR == -1)
+            {
+                setConsoleLabel("PDR 을 선택하지 않았습니다.", Color.Red);
+                return;
+            }
+            // key 구성 : 이미지파일명의 _ 구분한 3번째 필드값
+            string keyFromImageFileNameSuffixes = _inspectorsChoice.makeKey(inspectorID, suffix1, suffix2);
+
+            Debug.WriteLine($"inspector: {inspectorID} key : {keyFromImageFileNameSuffixes}, PDR : {selectedPDR}");
+
+            _inspectorsChoice.put(inspectorID, keyFromImageFileNameSuffixes, selectedPDR);
+            _inspectorsChoice.save();
+        }
+
         private void PreviosButton_Click(object sender, EventArgs e)
         {
+            saveCurrentChoiceToFile();
+
             _imageFileDataTable.setPrevious();
             if (!displayAndCheckImageLoadingState())
             {
@@ -147,6 +204,8 @@ namespace YoonProject1
 
         private void NextButton_Click(object sender, EventArgs e)
         {
+            saveCurrentChoiceToFile();
+
             _imageFileDataTable.setNext();
             if (!displayAndCheckImageLoadingState())
             {

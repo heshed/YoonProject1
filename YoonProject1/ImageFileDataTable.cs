@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Diagnostics;
 using System.IO;
 
 namespace YoonProject1
@@ -120,6 +121,7 @@ namespace YoonProject1
                 _currentSuffix2 = suffix2;
             }
             _dataTable.Rows.Add(fileInfo, suffix1, suffix2);
+            Debug.WriteLine($"Add to DataTable {suffix1} {suffix2} {fileInfo.Name}");
         }
 
         public DataRowCollection rows()
