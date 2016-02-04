@@ -8,7 +8,7 @@ YoonProject1
  - [YoonProject1-x86-2016-02-04.zip](releaseWithDate/YoonProject1-x86-2016-02-04.zip)
 
 - 2016-01-19 테스트버전 
- - [YoonProject1-2016-01-19.zip](releaseWithDate/YoonProject1-2016-01-19.zip)
+ - [YoonProject1-2016-01-19.zip](releaseWithDate/YoonProject1-2016-01-19.zip?raw=true)
 
 # 요구사항
 
