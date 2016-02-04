@@ -4,6 +4,9 @@ YoonProject1
 
 # 릴리즈
 
+- 2016-02-04 x86 테스트버전 
+ - [YoonProject1-x86-2016-02-04.zip](releaseWithDate/YoonProject1-x86-2016-02-04.zip)
+
 - 2016-01-19 테스트버전 
  - [YoonProject1-2016-01-19.zip](releaseWithDate/YoonProject1-2016-01-19.zip)
 
