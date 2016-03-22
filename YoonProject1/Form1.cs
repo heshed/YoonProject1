@@ -18,6 +18,7 @@ namespace YoonProject1
         private FolderBrowserDialog _folderBrowserDialog;
         private ImageFileDataTable _imageFileDataTable = null;
         private InspectorsChoice _inspectorsChoice;
+        private DefaultConfig _DefaultConfig = new DefaultConfig();
 
         public PDRForm()
         {
@@ -34,6 +35,9 @@ namespace YoonProject1
             _imageFileDataTable.setInspectorId(ImageFileDataTable.Inspector1);
             Checker1Button.BackColor = Color.Coral;
             Checker2Button.BackColor = DefaultBackColor;
+
+            // 설정파일 로직
+            _DefaultConfig.write();
         }
 
         private void openDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
