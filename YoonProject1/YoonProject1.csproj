@@ -53,6 +53,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Nett, Version=1.0.0.0, Culture=neutral, PublicKeyToken=62d0048d55e90461, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nett.StrongNamed.0.4.1\lib\Net40\Nett.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -66,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
     <Compile Include="ImageFileDataTable.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -88,6 +93,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
