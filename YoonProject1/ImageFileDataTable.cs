@@ -10,8 +10,8 @@ namespace YoonProject1
         public const int Inspector2 = 2;
         private FileInfo _currentFileInfo;
         private int _currentIndex;
-        private string _currentSuffix1;
-        private string _currentSuffix2;
+        private string _currentFileName;
+        private string _currentDirectory;
 
         private readonly DataTable _dataTable;
         private string _directoryPath;
@@ -22,8 +22,8 @@ namespace YoonProject1
         {
             _dataTable = new DataTable();
             _dataTable.Columns.Add("fileInfo", typeof (FileInfo));
-            _dataTable.Columns.Add("fileNameSuffix1", typeof (string));
-            _dataTable.Columns.Add("fileNameSuffix2", typeof (string));
+            _dataTable.Columns.Add("fileName", typeof(string));
+            _dataTable.Columns.Add("directory", typeof(string));
         }
 
         public string getDirectoryPath()
@@ -111,17 +111,17 @@ namespace YoonProject1
             return _dataTable.Rows.Count;
         }
 
-        public void addFileInfo(FileInfo fileInfo, string suffix1, string suffix2)
+        public void addFileInfo(FileInfo fileInfo, string fileName, string directory)
         {
             // 최초 입력일 경우 current 에 셋팅한다.
             if (_dataTable.Rows.Count == 0)
             {
                 _currentFileInfo = fileInfo;
-                _currentSuffix1 = suffix1;
-                _currentSuffix2 = suffix2;
+                _currentFileName = fileName;
+                _currentDirectory = directory;
             }
-            _dataTable.Rows.Add(fileInfo, suffix1, suffix2);
-            Debug.WriteLine($"Add to DataTable {suffix1} {suffix2} {fileInfo.Name}");
+            _dataTable.Rows.Add(fileInfo, fileName, directory);
+            Debug.WriteLine($"Add to DataTable {fileName}, {directory}, {fileInfo.Name}");
         }
 
         public DataRowCollection rows()
@@ -141,6 +141,11 @@ namespace YoonProject1
         public FileInfo getCurrentFileInfo()
         {
             return _currentFileInfo;
+        }
+
+        public string getCurrentFileName()
+        {
+            return _currentFileName;
         }
 
         public string getCurrentSuffix1()

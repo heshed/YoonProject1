@@ -71,8 +71,9 @@ namespace YoonProject1
         private void renderCurrentImageToPictureBox()
         {
             FileInfo info = _imageFileDataTable.getCurrentFileInfo();
-            string suffix1 = _imageFileDataTable.getCurrentSuffix1();
-            string suffix2 = _imageFileDataTable.getCurrentSuffix2();
+            string fileName = _imageFileDataTable.getCurrentFileName();
+            //string suffix1 = _imageFileDataTable.getCurrentSuffix1();
+            //string suffix2 = _imageFileDataTable.getCurrentSuffix2();
             renderImageFileToPictureBox(pictureBox, info.FullName);
         }
 
@@ -88,10 +89,10 @@ namespace YoonProject1
             DirectoryInfo directoryInfo = new DirectoryInfo(selectedPath);
             foreach (FileInfo info in directoryInfo.GetFiles())
             {
-                string suffix1, suffix2;
-                if (isImageFile(info) && getSuffixesFromFileName(info, out suffix1, out suffix2))
+                if (isImageFile(info))
                 {
-                    imageFileDataTable.addFileInfo(info, suffix1, suffix2);
+                    string fileName = getFileName(info);
+                    imageFileDataTable.addFileInfo(info, fileName, directoryInfo.FullName);
                 }
             }
         }
@@ -102,21 +103,10 @@ namespace YoonProject1
             return extensions.Contains(info.Extension, StringComparer.OrdinalIgnoreCase);
         }
 
-        private bool getSuffixesFromFileName(FileInfo info, out string suffix1, out string suffix2)
-        {            
+        private string getFileName(FileInfo info)
+        {
             // 파일 포맷은 001_151126_101489851.png 
-            string nameWithoutExtension = Path.GetFileNameWithoutExtension(info.FullName);
-            string[] splitedFileName = nameWithoutExtension.Split('_');
-            if (splitedFileName.Length < 3)
-            {
-                suffix1 = "";
-                suffix2 = "";
-                return false;
-            }
-            var lastSplitedStringLength = splitedFileName[2].Length;
-            suffix1 = splitedFileName[2].Substring(0, lastSplitedStringLength - 1);
-            suffix2 = splitedFileName[2].Substring(lastSplitedStringLength - 1, 1);
-            return true;
+            return Path.GetFileNameWithoutExtension(info.FullName);
         }
 
         private bool displayAndCheckImageLoadingState()
@@ -170,8 +160,8 @@ namespace YoonProject1
                 return;
             }
 
-            string suffix1 = _imageFileDataTable.getCurrentSuffix1();
-            string suffix2 = _imageFileDataTable.getCurrentSuffix2();
+            string fileName = _imageFileDataTable.getCurrentFileName();
+            string directory = _imageFileDataTable.getDirectoryPath();
             int inspectorID = _imageFileDataTable.getInspectorId();
             int selectedPDR = getSelectedPDRValue();
 
@@ -180,12 +170,12 @@ namespace YoonProject1
                 setConsoleLabel("PDR 을 선택하지 않았습니다.", Color.Red);
                 return;
             }
-            // key 구성 : 이미지파일명의 _ 구분한 3번째 필드값
-            string keyFromImageFileNameSuffixes = _inspectorsChoice.makeKey(inspectorID, suffix1, suffix2);
+            // key 구성 : 이미지파일명
+            string keyFromImageFileName = _inspectorsChoice.makeKey(inspectorID, fileName, directory);
 
-            Debug.WriteLine($"inspector: {inspectorID} key : {keyFromImageFileNameSuffixes}, PDR : {selectedPDR}");
+            Debug.WriteLine($"inspector: {inspectorID} key : {keyFromImageFileName}, PDR : {selectedPDR}");
 
-            _inspectorsChoice.put(inspectorID, keyFromImageFileNameSuffixes, selectedPDR);
+            _inspectorsChoice.put(inspectorID, keyFromImageFileName, selectedPDR);
             _inspectorsChoice.save();
         }
 

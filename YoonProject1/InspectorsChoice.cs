@@ -20,9 +20,9 @@ namespace YoonProject1
             _csvFile = $"{directory}/result.csv";
         }
 
-        public string makeKey(int inspector, string suffix1, string suffix2)
+        public string makeKey(int inspector, string fileName, string directory)
         {
-            return $"{suffix1},{suffix2},{inspector}";
+            return $"{fileName},{inspector},{directory}";
         }
 
 
